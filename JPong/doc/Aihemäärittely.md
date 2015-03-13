@@ -1,10 +1,10 @@
-**Aihe:** Klassinen pong-peli muutamilla lis‰ominaisuuksilla.
+**Aihe:** Klassinen pong-peli muutamilla lis√§ominaisuuksilla.
 
-**K‰ytt‰j‰t:**
+**K√§ytt√§j√§t:**
 Kuka tahansa kiinnostunut
 
-**Kaikkien k‰ytt‰jien toiminnot:**
+**Kaikkien k√§ytt√§jien toiminnot:**
 
-* Kykenee k‰ynnist‰m‰‰n pelin
-* Kykenee pelata peli‰
-* Kykenee muuttaa sen asetuksia
+* Kykenee k√§ynnist√§m√§√§n pelin
+* Kykenee pelata peli√§
+* Kykenee muuttamaan sen asetuksia
