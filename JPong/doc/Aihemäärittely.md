@@ -1,10 +1,14 @@
+<<<<<<< HEAD
 **Aihe:** Klassinen pong-peli muutamilla lis‰ominaisuuksilla joiden on tarkoitus tuoda peliin hieman enemm‰n mielenkiintoa.
+=======
+**Aihe:** Klassinen pong-peli muutamilla lis√§ominaisuuksilla.
+>>>>>>> 9e02622bf8d4a7a340f8f5336621e6cb21159911
 
-**K‰ytt‰j‰t:**
+**K√§ytt√§j√§t:**
 Kuka tahansa kiinnostunut
 
-**Kaikkien k‰ytt‰jien toiminnot:**
+**Kaikkien k√§ytt√§jien toiminnot:**
 
-* Kykenee k‰ynnist‰m‰‰n pelin
-* Kykenee pelata peli‰
-* Kykenee muuttaa sen asetuksia
+* Kykenee k√§ynnist√§m√§√§n pelin
+* Kykenee pelata peli√§
+* Kykenee muuttamaan sen asetuksia
