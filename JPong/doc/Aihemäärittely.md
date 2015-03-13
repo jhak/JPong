@@ -1,4 +1,4 @@
-**Aihe:** Klassinen pong-peli muutamilla lisäominaisuuksilla.
+**Aihe:** Klassinen pong-peli muutamilla lisäominaisuuksilla joiden on tarkoitus tuoda peliin hieman enemmän mielenkiintoa.
 
 **Käyttäjät:**
 Kuka tahansa kiinnostunut
