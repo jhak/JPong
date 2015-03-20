@@ -5,10 +5,35 @@
  */
 package com.app.game.components;
 
+import java.awt.Graphics;
+import java.awt.Point;
+
 /**
  *
  * @author Jere
  */
-public class GameObject {
+public abstract class GameObject {
     
+    private double x;
+    private double y;
+    
+    public GameObject(double x, double y){
+        this.x = x; 
+        this.y = y;
+    }
+    
+    public void setPos(double x, double y){
+        this.x = x;
+        this.y = y;
+    }
+    
+    public double getX(){
+        return this.x;
+    }
+    public double getY(){
+        return this.y;
+    }
+    
+    public abstract void Paint(Graphics g);
+            
 }

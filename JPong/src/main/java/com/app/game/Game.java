@@ -29,8 +29,8 @@ public class Game {
     }
     //sets up a fresh start for a new game and starts the game
     public void startGame(Dimension d){
-        this.player1Paddle = new Paddle();
-        this.player2Paddle = new Paddle();
+        this.player1Paddle = new Paddle(50,50);
+        this.player2Paddle = new Paddle(d.getWidth()-50,d.getHeight()-50);
         this.gameBall = new Ball(d.getWidth()/2,d.getHeight()/2);
     }
     
