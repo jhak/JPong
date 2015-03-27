@@ -7,6 +7,7 @@ package com.app.game;
 
 import com.app.game.components.Ball;
 import com.app.game.components.Paddle;
+import com.app.game.gui.GameFrame;
 import java.awt.Dimension;
 
 /**
@@ -23,14 +24,17 @@ public class Game {
     private Ball gameBall;
     private int player1Score;
     private int player2Score;
+    private GameFrame gameFrame;
     
     public Game(){
-        
+        this.gameFrame = new GameFrame(this);
+        startGame(this.gameFrame.getGamePanel().getSize());
     }
+    
     //sets up a fresh start for a new game and starts the game
     public void startGame(Dimension d){
-        this.player1Paddle = new Paddle(50,50);
-        this.player2Paddle = new Paddle(d.getWidth()-50,d.getHeight()-50);
+        this.player1Paddle = new Paddle(50,d.height/2-42.5);
+        this.player2Paddle = new Paddle(d.getWidth()-50,d.height/2-42.5);
         this.gameBall = new Ball(d.getWidth()/2,d.getHeight()/2);
     }
     

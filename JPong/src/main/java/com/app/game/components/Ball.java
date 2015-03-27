@@ -20,7 +20,7 @@ public class Ball extends GameObject{
 
     @Override
     public void Paint(Graphics g) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        g.fillOval((int)this.getX(), (int)this.getY(), 5, 5);
     }
     
    

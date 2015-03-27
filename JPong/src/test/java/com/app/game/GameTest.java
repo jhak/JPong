@@ -41,7 +41,7 @@ public class GameTest {
     @Test
     public void testStartGame() {
         Game instance = new Game();
-        instance.startGame(new Dimension(null));
+        instance.startGame(new Dimension(new Dimension(300,300)));
         assertNotNull(instance.getGameBall());
     }
     

@@ -21,7 +21,7 @@ public class Paddle extends GameObject {
     
     @Override
     public void Paint(Graphics g) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        g.fillRect((int)this.getX(), (int)this.getY(), 10, 85);
     }
-    //placeHolder
+    
 }

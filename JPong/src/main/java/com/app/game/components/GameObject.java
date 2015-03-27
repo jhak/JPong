@@ -30,6 +30,7 @@ public abstract class GameObject {
     public double getX(){
         return this.x;
     }
+    
     public double getY(){
         return this.y;
     }
