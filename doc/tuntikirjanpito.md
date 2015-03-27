@@ -4,3 +4,7 @@ Alkutoimet, repositorion luonti yms. 2h
 **20 - 21.3**
 Suunnittelua, tutkimista, luokkarakenteen hahmottelua ja 
 Ohjelmointia 3h
+
+**23 - 27.3**
+Suunnittelua ja ohjelmointia 4 tuntia
+Takkuamista git:in kanssa 1 tunti
