@@ -7,4 +7,4 @@ Ohjelmointia 3h
 
 **23 - 27.3**
 Suunnittelua ja ohjelmointia 4 tuntia
-Takkuamista git:in kanssa 1 tunti
+ja takkuamista git:in kanssa 1 tunti
