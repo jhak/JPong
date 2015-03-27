@@ -1,11 +1,19 @@
-**Aihe:** Klassinen pong-peli muutamilla lis‰ominaisuuksilla joiden on tarkoitus tuoda peliin hieman enemm‰n mielenkiintoa.
+**Aihe:** Klassinen pong-peli muutamilla lis√§ominaisuuksilla joiden on tarkoitus tuoda peliin hieman enemm√§n mielenkiintoa.
 
 
-**K‰ytt‰j‰t:**
+**K√§ytt√§j√§t:**
 Kuka tahansa kiinnostunut
 
-**Kaikkien k‰ytt‰jien toiminnot:**
+**Kaikkien k√§ytt√§jien toiminnot:**
 
-* Kykenee k‰ynnist‰m‰‰n pelin
-* Kykenee pelata peli‰
+* Kykenee k√§ynnist√§m√§√§n pelin
+* Kykenee pelata peli√§
 * Kykenee muuttamaan sen asetuksia
+
+
+**Vaatimukset pelille**
+
+* Pelin tulee loppua tietyn pistem√§√§r√§n j√§lkeen
+* Pallon tulee liikkua oletettavasti
+* Pelaajien palkkien tulee liikkua
+* Pallon tulee reagoida pelaajien palkkeihin
