@@ -8,3 +8,6 @@ Ohjelmointia 3h
 **23 - 27.3**
 Suunnittelua ja ohjelmointia 4 tuntia
 ja takkuamista git:in kanssa 1 tunti
+
+**6 - 11.4**
+Pallon fysiikkaa, testejä, bugikorjauksia ym. 5 tuntia.
