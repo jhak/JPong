@@ -10,4 +10,4 @@ Suunnittelua ja ohjelmointia 4 tuntia
 ja takkuamista git:in kanssa 1 tunti
 
 **6 - 11.4**
-Pallon fysiikkaa, testejä, bugikorjauksia ym. 5 tuntia.
+Pallon fysiikkaa, testejä, bugikorjauksia, javadocsien aloitus, ~5h.
