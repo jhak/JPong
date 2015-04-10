@@ -6,6 +6,7 @@
 package com.app.game.gui;
 
 import com.app.game.Game;
+import com.app.game.gui.listeners.paddleListener;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import javax.swing.JFrame;
@@ -43,7 +44,7 @@ public class GameFrame extends JFrame{
         setSize(new Dimension(900,900));
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 	setLayout(new BorderLayout());
-        
+        this.gamePanel.addKeyListener(new paddleListener(this.game.getPlayer1Paddle(),this.game.getPlayer2Paddle()));
         add(menuBar, BorderLayout.NORTH);
         add(gamePanel, BorderLayout.SOUTH);
         
@@ -55,6 +56,10 @@ public class GameFrame extends JFrame{
     
     public GamePanel getGamePanel(){
         return this.gamePanel;
+    }
+    
+    public void setPaddleListener(){
+        
     }
     
 }

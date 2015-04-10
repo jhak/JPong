@@ -24,6 +24,7 @@ public class GamePanel extends JPanel {
         this.d = d;
         setPreferredSize(this.d);
         setVisible(true);
+        
     }
     
     @Override
