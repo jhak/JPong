@@ -45,5 +45,16 @@ public class GameTest {
         assertNotNull(instance.getGameBall());
     }
     
+    @Test
+    public void testCheckCollisionBall() {
+        Game instance = new Game();
+        instance.startGame(new Dimension(new Dimension(300,300)));
+        instance.getGameBall().setPos(0, 0);
+        instance.getGameBall().setxVelo(-5);
+        instance.getGameBall().setyVelo(0);
+        instance.tick();
+        assertEquals(5,(int)instance.getGameBall().getxVelo(),0);
+    }
+    
     
 }

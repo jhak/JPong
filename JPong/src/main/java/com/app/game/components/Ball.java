@@ -31,6 +31,8 @@ public class Ball extends GameObject{
     
     public void move(){
         this.setPos(this.getX() + this.xVelo, this.getY() + this.yVelo);
+        this.xVelo *=1.008;
+        this.yVelo *=1.008;
     }
     
     public void handleCollisionX() {

@@ -27,7 +27,7 @@ public class Game {
     private GameFrame gameFrame;
     private Thread gameThread;
     private boolean debug = true;
-    
+
     public Game() {
         this.gameFrame = new GameFrame(this);
         startGame(this.gameFrame.getGamePanel().getSize());
@@ -39,6 +39,7 @@ public class Game {
         this.player1Paddle = new Paddle(50, d.height / 2 - 42.5);
         this.player2Paddle = new Paddle(d.getWidth() - 50, d.height / 2 - 42.5);
         this.gameBall = new Ball(d.getWidth() / 2, d.getHeight() / 2);
+        this.gameFrame.setPaddleListener();
         runGame();
     }
 
@@ -87,30 +88,38 @@ public class Game {
             getGameBall().handleCollisionX();
         }
 
-        if ((getGameBall().getY() + getGameBall().getyVelo()) >=  this.gameFrame.getGamePanel().getHeight() || (getGameBall().getY() + getGameBall().getyVelo()) <= 0 ) {
+        if ((getGameBall().getY() + getGameBall().getyVelo()) >= this.gameFrame.getGamePanel().getHeight() || (getGameBall().getY() + getGameBall().getyVelo()) <= 0) {
             getGameBall().handleCollisionY();
+        }
+
+        if ((getPlayer1Paddle().getY() < 0)) {
+            getPlayer1Paddle().setPos(getPlayer1Paddle().getX(), 0);
+        } else if ((getPlayer1Paddle().getPaddleRect().getHeight() + getPlayer1Paddle().getY() > this.gameFrame.getGamePanel().getHeight())) {
+            getPlayer1Paddle().setPos(getPlayer1Paddle().getX(), this.gameFrame.getGamePanel().getHeight() - getPlayer1Paddle().getPaddleRect().getHeight());
+        }
+
+        if ((getPlayer2Paddle().getY() < 0)) {
+            getPlayer2Paddle().setPos(getPlayer2Paddle().getX(), 0);
+        } else if ((getPlayer2Paddle().getPaddleRect().getHeight() + getPlayer2Paddle().getY() > this.gameFrame.getGamePanel().getHeight())) {
+            getPlayer2Paddle().setPos(getPlayer2Paddle().getX(), this.gameFrame.getGamePanel().getHeight() - getPlayer2Paddle().getPaddleRect().getHeight());
         }
     }
 
-    
     public void runGame() {
-       this.gameThread = new Thread(){
-           @Override
-           public void run(){
-               while(true){
-                   tick();
-                   if(debug){
-                       System.out.println("ball pos: "+getGameBall().getX()+","+getGameBall().getY());
-                   }
-                   try{
-                   Thread.sleep(40);
-                   } catch (InterruptedException ie){
-                       ie.printStackTrace();
-                   }
-               }
-           }
-       };
-       gameThread.start();
+        this.gameThread = new Thread() {
+            @Override
+            public void run() {
+                while (true) {
+                    tick();
+                    try {
+                        Thread.sleep(40);
+                    } catch (InterruptedException ie) {
+                        ie.printStackTrace();
+                    }
+                }
+            }
+        };
+        gameThread.start();
     }
 
 }

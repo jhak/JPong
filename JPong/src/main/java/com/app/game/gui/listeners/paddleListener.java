@@ -13,34 +13,48 @@ import java.awt.event.KeyListener;
  *
  * @author Jere
  */
-public class paddleListener implements KeyListener {
-    
-    private Paddle p1;
-    private Paddle p2;
-    
-    public paddleListener(Paddle p1, Paddle p2){
-        this.p1 = p1;
-        this.p2 = p2;
+public class PaddleListener implements KeyListener {
+
+    private Paddle p;
+    private boolean player1;
+
+    public PaddleListener(Paddle p, boolean player1) {
+        this.p = p;
+        this.player1 = player1;
     }
-    
+
     @Override
     public void keyTyped(KeyEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+     
     }
 
     @Override
     public void keyPressed(KeyEvent e) {
-        if(e.getID() == KeyEvent.VK_UP){
-            this.p1.setPos(p1.getX(), p1.getY()-3);
+
+        if (player1) {
+            if (e.getKeyCode() == KeyEvent.VK_UP) {
+                this.p.setPos(p.getX(), p.getY() - 10);
+            }
+
+            if (e.getKeyCode() == KeyEvent.VK_DOWN) {
+                this.p.setPos(p.getX(), p.getY() + 10);
+            }
+        } else {
+
+            if (e.getKeyCode() == KeyEvent.VK_W) {
+                this.p.setPos(p.getX(), p.getY() - 10);
+            }
+
+            if (e.getKeyCode() == KeyEvent.VK_S) {
+                this.p.setPos(p.getX(), p.getY() + 10);
+            }
         }
-        if(e.getID() == KeyEvent.VK_DOWN){
-            this.p1.setPos(p1.getX(), p1.getY()+3);
-        }
+
     }
 
     @Override
     public void keyReleased(KeyEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       
     }
-    
+
 }
