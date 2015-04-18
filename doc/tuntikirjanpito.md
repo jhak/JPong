@@ -11,3 +11,6 @@ ja takkuamista git:in kanssa 1 tunti
 
 **6 - 11.4**
 Pallon fysiikkaa, testejä, bugikorjauksia, javadocsien aloitus, ~5h.
+
+**16 - 18.4**
+Teknisiä ongelmia, koodausta, javadocsit, luokka ja sekvenssikaaviot, ~4h.
