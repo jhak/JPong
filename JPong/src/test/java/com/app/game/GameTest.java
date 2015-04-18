@@ -6,6 +6,8 @@
 package com.app.game;
 
 import java.awt.Dimension;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -48,12 +50,17 @@ public class GameTest {
     @Test
     public void testCheckCollisionBall() {
         Game instance = new Game();
+        float negativeVelo = -5;
         instance.startGame(new Dimension(new Dimension(300,300)));
         instance.getGameBall().setPos(0, 0);
-        instance.getGameBall().setxVelo(-5);
+        instance.getGameBall().setxVelo(negativeVelo);
         instance.getGameBall().setyVelo(0);
-        instance.tick();
-        assertEquals(5,(int)instance.getGameBall().getxVelo(),0);
+        try {
+            instance.tick();
+        } catch (InterruptedException ex) {
+      
+        }
+        assertTrue(negativeVelo<(int)instance.getGameBall().getxVelo());
     }
     
     
