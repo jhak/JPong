@@ -9,17 +9,19 @@ import java.awt.Graphics;
 import java.awt.Rectangle;
 
 /**
- *
- * @author Jere
+ * Paddle class containing all essentials
+ * @author Jere 
  */
 public class Paddle extends GameObject {
     private Rectangle paddleRect;
     
     public Paddle(double x, double y){
-        super(x,y);
-        
+        super(x,y);  
     }
-    
+    /**
+     * 
+     * @return Rectangle of the paddle
+     */
     public Rectangle getPaddleRect(){
         return new Rectangle((int)this.getX(), (int)this.getY(), 10, 85);
     }

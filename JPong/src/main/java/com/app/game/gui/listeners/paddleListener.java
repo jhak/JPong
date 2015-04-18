@@ -17,7 +17,11 @@ public class PaddleListener implements KeyListener {
 
     private Paddle p;
     private boolean player1;
-
+    /**
+     * 
+     * @param p paddle to be listened
+     * @param player1 boolean defining which controls human player uses, true for arrows, false for W and S
+     */
     public PaddleListener(Paddle p, boolean player1) {
         this.p = p;
         this.player1 = player1;
