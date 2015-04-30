@@ -14,3 +14,6 @@ Pallon fysiikkaa, testejä, bugikorjauksia, javadocsien aloitus, ~5h.
 
 **16 - 18.4**
 Teknisiä ongelmia, koodausta, javadocsit, luokka ja sekvenssikaaviot, ~4h.
+
+** - 30.4**
+Bugien korjausta, lisä testejä, muutoksia AI pelaajaan.
