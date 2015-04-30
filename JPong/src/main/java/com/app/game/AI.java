@@ -6,6 +6,7 @@
 package com.app.game;
 
 import com.app.game.components.Paddle;
+import java.util.Random;
 
 /**
  *class handing ultra-basic AI paddle movements
@@ -14,6 +15,7 @@ import com.app.game.components.Paddle;
 public class AI {
     private Paddle p;
     private Game game;
+    private Random random = new Random();
     /**
      * 
      * @param game current game
@@ -24,13 +26,17 @@ public class AI {
         this.game = game;
     }
     /**
-     * makes basic AI move based on ball velocity
+     * makes basic AI move based on ball velocity & makes random mistakes by not moving accordingly
      */
     public void movePaddle(){
         if(this.game.getGameBall().getyVelo() > 0){
-            this.p.setPos(p.getX(), p.getY() + 15);
+            if(this.game.getGameBall().getY() > p.getY()+85)
+                if(random.nextInt(10) > 1) 
+                    this.p.setPos(p.getX(), p.getY() + 15);
         } else {
-            this.p.setPos(p.getX(), p.getY() - 15);
+            if(this.game.getGameBall().getY() < p.getY())
+                if(random.nextInt(10) > 1)
+                    this.p.setPos(p.getX(), p.getY() - 15);
         }
     }
     
