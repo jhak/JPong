@@ -33,19 +33,20 @@ public class GamePanel extends JPanel {
         this.d = d;
         setPreferredSize(this.d);
         setVisible(true);
- 
+        setDoubleBuffered(true);     
     }
 
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
+        
         g.setColor(Color.BLACK);
         g.fillRect(0, 0, (int) d.getWidth(), (int) d.getHeight());
         g.setColor(Color.GREEN);
         this.game.getGameBall().Paint(g);
         this.game.getPlayer1Paddle().Paint(g);
         this.game.getPlayer2Paddle().Paint(g);
-        g.drawString(this.game.getPlayer1Score() + " - " + this.game.getPlayer2Score(), (this.d.width / 2) - 15, 30);
+        g.drawString(this.game.getPlayer1Score() + " - " + this.game.getPlayer2Score(), (this.d.width / 2) - 15, 30); 
     }
 
 }

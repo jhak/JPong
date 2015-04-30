@@ -9,9 +9,10 @@ import com.app.game.Game;
 import com.app.game.gui.listeners.PaddleListener;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
+import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.IOException;
+import java.awt.image.BufferStrategy;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
@@ -29,13 +30,14 @@ public class GameFrame extends JFrame {
     private JMenu options;
     private JMenuItem startGame;
     private JMenuItem stopGame;
-
+    
     /**
      * builds a new gameFrame
      *
      * @param game the game you are using this frame for
      */
     public GameFrame(Game game) {
+
         this.game = game;
         this.gamePanel = new GamePanel(game, new Dimension(780, 400));
         this.menuBar = new JMenuBar();
@@ -46,7 +48,7 @@ public class GameFrame extends JFrame {
         this.options.add(startGame);
         this.options.add(stopGame);
         this.menuBar.add(this.options);
-
+        
         this.startGame.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -60,13 +62,13 @@ public class GameFrame extends JFrame {
                 getGame().stopGame();
             }
         });
-
+        
         setResizable(false);
         setTitle("JPong");
         setSize(new Dimension(900, 900));
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
-
+        
         add(menuBar, BorderLayout.NORTH);
         add(gamePanel, BorderLayout.SOUTH);
 
@@ -98,5 +100,7 @@ public class GameFrame extends JFrame {
         this.addKeyListener(new PaddleListener(this.game.getPlayer1Paddle(), true));
         this.addKeyListener(new PaddleListener(this.game.getPlayer2Paddle(), false));
     }
+    
+
 
 }

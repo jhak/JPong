@@ -20,8 +20,14 @@ public class Ball extends GameObject{
     
     public Ball(double x, double y){
       super(x,y);
-      this.xVelo = 1 + new Random().nextInt(10);
-      this.yVelo = 1 + new Random().nextInt(10);
+      this.xVelo = 5 + new Random().nextInt(5);
+      this.yVelo = 5 + new Random().nextInt(5);
+      if(new Random().nextInt(2) == 1){
+          xVelo *=-1;
+      }
+      if(new Random().nextInt(2) == 1){
+          yVelo *=-1;
+      }
     }
 
     @Override
@@ -35,6 +41,21 @@ public class Ball extends GameObject{
         this.setPos(this.getX() + this.xVelo, this.getY() + this.yVelo);
         this.xVelo *=1.008;
         this.yVelo *=1.008;
+        if(Math.abs(xVelo) > 15){
+            if(xVelo < 0) {
+                xVelo = -15;
+            } else {
+                xVelo = 15;
+            }
+        }
+        if(Math.abs(yVelo) > 15){
+            if(yVelo < 0) {
+                yVelo = -15;
+            } else {
+                yVelo = 15;
+            }
+        }
+        
     }
     /**
      * handles X collision

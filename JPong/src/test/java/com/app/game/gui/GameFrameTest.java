@@ -48,7 +48,6 @@ public class GameFrameTest {
     }
     
     @Test
-    
     public void testIsVisible(){
         System.out.println("testIsVisible");
         GameFrame gf = new GameFrame(new Game());

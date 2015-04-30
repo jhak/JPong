@@ -63,5 +63,27 @@ public class GameTest {
         assertTrue(negativeVelo<(int)instance.getGameBall().getxVelo());
     }
     
+    @Test
+    public void testCheckForGoalIncreasePlayer2() throws InterruptedException{
+      Game instance = new Game();
+      instance.getGameBall().setPos(-20, -20);
+      instance.checkForGoal();
+      assertEquals(1,instance.getPlayer2Score());
+    }
     
+    @Test
+    public void testCheckForGoalIncreasePlayer1() throws InterruptedException{
+      Game instance = new Game();
+      instance.getGameBall().setPos(instance.gameFrame.getGamePanel().getWidth()+20, 20);
+      instance.checkForGoal();
+      assertEquals(1,instance.getPlayer1Score());
+    }
+    
+    @Test
+    public void testBallResetAfterGoal() throws InterruptedException{
+      Game instance = new Game();
+      instance.getGameBall().setPos(instance.gameFrame.getGamePanel().getWidth()+20, 20);
+      instance.checkForGoal();
+      assertNotSame(instance.getGameBall().getX(),instance.gameFrame.getGamePanel().getWidth()+20);
+    }
 }

@@ -28,9 +28,9 @@ public class AI {
      */
     public void movePaddle(){
         if(this.game.getGameBall().getyVelo() > 0){
-            this.p.setPos(p.getX(), p.getY() + 10);
+            this.p.setPos(p.getX(), p.getY() + 15);
         } else {
-            this.p.setPos(p.getX(), p.getY() - 10);
+            this.p.setPos(p.getX(), p.getY() - 15);
         }
     }
     

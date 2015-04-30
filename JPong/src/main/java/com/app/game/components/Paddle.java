@@ -23,12 +23,12 @@ public class Paddle extends GameObject {
      * @return Rectangle of the paddle
      */
     public Rectangle getPaddleRect(){
-        return new Rectangle((int)this.getX(), (int)this.getY(), 10, 85);
+        return new Rectangle((int)this.getX(), (int)this.getY(), 15, 85);
     }
     
     @Override
     public void Paint(Graphics g) {
-        g.fillRect((int)this.getX(), (int)this.getY(), 10, 85);
+        g.fillRect((int)this.getX(), (int)this.getY(), 15, 85);
     }
     
 }

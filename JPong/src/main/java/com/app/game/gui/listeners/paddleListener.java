@@ -8,6 +8,8 @@ package com.app.game.gui.listeners;
 import com.app.game.components.Paddle;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -29,28 +31,28 @@ public class PaddleListener implements KeyListener {
 
     @Override
     public void keyTyped(KeyEvent e) {
-     
+        
+
     }
 
     @Override
     public void keyPressed(KeyEvent e) {
-
         if (player1) {
             if (e.getKeyCode() == KeyEvent.VK_UP) {
-                this.p.setPos(p.getX(), p.getY() - 10);
+                this.p.setPos(p.getX(), p.getY() - 15);
             }
 
             if (e.getKeyCode() == KeyEvent.VK_DOWN) {
-                this.p.setPos(p.getX(), p.getY() + 10);
+                this.p.setPos(p.getX(), p.getY() + 15);
             }
         } else {
 
             if (e.getKeyCode() == KeyEvent.VK_W) {
-                this.p.setPos(p.getX(), p.getY() - 10);
+                this.p.setPos(p.getX(), p.getY() - 15);
             }
 
             if (e.getKeyCode() == KeyEvent.VK_S) {
-                this.p.setPos(p.getX(), p.getY() + 10);
+                this.p.setPos(p.getX(), p.getY() + 15);
             }
         }
 

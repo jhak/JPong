@@ -11,6 +11,7 @@ import com.app.game.gui.GameFrame;
 import java.awt.Color;
 import java.awt.Dimension;
 import javafx.scene.text.Font;
+import javax.swing.JOptionPane;
 
 /**
  *Core class that binds the game pieces together
@@ -23,7 +24,7 @@ public class Game {
     private Ball gameBall;
     private int player1Score;
     private int player2Score;
-    private GameFrame gameFrame;
+    public GameFrame gameFrame;
     private Thread gameThread;
     private boolean debug = true;
     private Dimension dimension;
@@ -31,7 +32,7 @@ public class Game {
     private boolean player1Won;
     private boolean player2Won;
     private volatile boolean shouldGameStop = true;
-
+    private boolean didTick = false;
     /**
      * creates a new gameFrame and calls startGame()
      */
@@ -124,11 +125,16 @@ public class Game {
      * @throws InterruptedException
      */
     public void tick() throws InterruptedException {
+        handleCollision();
         getGameBall().move();
         this.ai.movePaddle();
         checkForGoal();
-        handleCollision();
-        this.gameFrame.getGamePanel().repaint();
+        this.didTick = true;
+        this.gameFrame.getGamePanel().repaint();    
+    }
+    
+    public void displayErrorWarning(){
+        JOptionPane.showMessageDialog(this.gameFrame, "Minor error occured during the game loop", "Error", JOptionPane.ERROR_MESSAGE);
     }
 
  /**
@@ -139,12 +145,12 @@ public class Game {
 
         if (getGameBall().getX() + getGameBall().getxVelo() < 0) {
             this.gameBall = new Ball(this.dimension.getWidth() / 2, this.dimension.getHeight() / 2);
-            this.player1Score++;
+            this.player2Score++;
         }
 
         if (getGameBall().getX() + getGameBall().getxVelo() > this.gameFrame.getGamePanel().getWidth()) {
             this.gameBall = new Ball(this.dimension.getWidth() / 2, this.dimension.getHeight() / 2);
-            this.player2Score++;
+            this.player1Score++;
         }
     }
 
@@ -193,11 +199,12 @@ public class Game {
     public void runGame() {
         gameThread = new Thread() {
             @Override
-            public void run() {
+            public void run() {             
                 while (true) {
                     try {
+                        Thread.sleep(30);
                         tick();
-                        Thread.sleep(40);
+                        
                         if (getPlayer1Score() > 9) {
                             player1Won = true;
                             break;
@@ -207,7 +214,7 @@ public class Game {
                         }
 
                     } catch (InterruptedException ie) {
-                        ie.printStackTrace();
+                        displayErrorWarning();
                     }
                     if (shouldGameStop()) {
                         break;
