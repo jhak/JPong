@@ -32,7 +32,7 @@ public class Game {
     private boolean player1Won;
     private boolean player2Won;
     private volatile boolean shouldGameStop = true;
-    private boolean didTick = false;
+
     /**
      * creates a new gameFrame and calls startGame()
      */
@@ -129,7 +129,7 @@ public class Game {
         getGameBall().move();
         this.ai.movePaddle();
         checkForGoal();
-        this.didTick = true;
+        
         this.gameFrame.getGamePanel().repaint();    
     }
     

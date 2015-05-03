@@ -5,6 +5,7 @@
  */
 package com.app.game;
 
+import com.app.game.components.Ball;
 import java.awt.Dimension;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -85,5 +86,37 @@ public class GameTest {
       instance.getGameBall().setPos(instance.gameFrame.getGamePanel().getWidth()+20, 20);
       instance.checkForGoal();
       assertNotSame(instance.getGameBall().getX(),instance.gameFrame.getGamePanel().getWidth()+20);
+    }
+    
+    @Test
+    public void testStopGame(){
+        Game instance = new Game();
+        instance.stopGame();
+        assertTrue(instance.shouldGameStop());
+    }
+    
+    @Test
+    public void testDoesGameStart(){
+        Game instance = new Game();
+        instance.stopGame();
+        instance.startGame(new Dimension(800,800));
+        assertFalse(instance.shouldGameStop());
+    }
+    
+    @Test
+    public void testTick() throws InterruptedException{
+        Game instance = new Game();
+        instance.stopGame();
+        Ball b = instance.getGameBall();
+        double x = b.getX();
+        double y = b.getY();
+        instance.tick();
+        if(b.getX() == x)
+            fail("Ball didnt move");
+        if(b.getY() == y)
+            fail("Ball didnt move");
+        
+        assertNotNull(instance.getGameBall());
+        
     }
 }

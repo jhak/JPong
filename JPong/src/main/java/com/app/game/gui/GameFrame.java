@@ -98,7 +98,8 @@ public class GameFrame extends JFrame {
      */
     public void setPaddleListener() {
         this.addKeyListener(new PaddleListener(this.game.getPlayer1Paddle(), true));
-        this.addKeyListener(new PaddleListener(this.game.getPlayer2Paddle(), false));
+            //2 player support not finished
+        //this.addKeyListener(new PaddleListener(this.game.getPlayer2Paddle(), false));
     }
     
 
