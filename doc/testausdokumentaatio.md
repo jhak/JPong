@@ -1,4 +1,4 @@
-**Testausdokumentaatio**
+**Testausdokumentaatio**<br>
 K‰sin testattuna ( pelaamalla peli‰ ) kaikki toimii, suurempia bugeja ei peruspelauksessa ole havaittavissa, kuitenkin tiedossa olevia bugeja on mm.
 * Pallo l‰p‰isee mailan kimpoamatta mailan ‰‰rireunoista joissain jyrkiss‰ kulmissa todella pienelt‰ alueelta
 * Huono framerate heikommilla kokoonpanoilla (?)
